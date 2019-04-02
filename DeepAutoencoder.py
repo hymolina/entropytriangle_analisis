@@ -24,6 +24,10 @@ import random, math
 import pandas as pd
 import entropytriangle as et
 
+import rpy2
+import rpy2.robjects as robjects
+import rpy2.robjects.numpy2ri
+
 import multiprocessing
 
 
@@ -32,6 +36,23 @@ import sys, getopt
 
 import gc
 
+
+"""
+R objects inicialization,
+"""
+rpy2.robjects.numpy2ri.actvate()
+
+robjects.r('''
+   library("entropies")
+
+    
+
+
+''')
+
+"""
+End or R code
+"""
 class Discretizer:
 
     nbins  = 0
